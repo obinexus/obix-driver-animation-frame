@@ -5,7 +5,7 @@
 [![npm version](https://img.shields.io/npm/v/obix-driver-animation-frame)](https://www.npmjs.com/package/obix-driver-animation-frame)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A full-featured animation scheduling and orchestration driver for the [OBIX SDK](https://github.com/OBINexusComputing/obix-sdk). Solves 10 core browser animation problems: jank & frame drops, timer drift, battery drain, complex timeline orchestration, missing pause/resume, memory leaks, background tab waste, profiling blindness, easing inconsistency, and SSR crashes.
+A full-featured animation scheduling and orchestration driver for the [OBIX SDK](https://github.com/obinexus/obix). Solves 10 core browser animation problems: jank & frame drops, timer drift, battery drain, complex timeline orchestration, missing pause/resume, memory leaks, background tab waste, profiling blindness, easing inconsistency, and SSR crashes.
 
 ## Installation
 
@@ -336,8 +336,6 @@ MIT — OBINexus <okpalan@protonmail.com>
 npm install obix-driver-animation-frame
 ```
 
-> **Not yet on npm.** The OBIX packages are prepared for publication and are published only on the owner's authorisation; until then this is the command the published package will answer to.
-
 ## API surface
 
 - `obix-driver-animation-frame` — 12 value exports: `createAnimationFrameDriver`, `createAnimationGraph`, `createCleanupManager`, `createCubicBezier`, `createEnvironmentAdapter`, `createPerformanceMonitor`, `createPlaybackController`, `createScheduler`, `createTimelineEngine`, `createVisibilityController`, `easings`, `getEasing`
@@ -356,8 +354,9 @@ The architecture of OBIX — the package families and which packages are public 
 
 ## Testing
 
-- 10 test files ship in the npm package (`test/`): they are the evidence of the package's contract, published so that its verification can be read — not runtime code (no entry point reaches them).
-- Run them with `npm test` (`vitest run`) in the OBIX monorepo, which provides the test tooling (Node's test runner, Vitest, TypeScript).
+- 10 test files ship in the npm package (`test/`): the evidence of the package's contract, published so that its verification can be inspected — not runtime code (no entry point reaches them).
+- **Standalone**: 10 of 10 — they read nothing outside the package.
+- Run them with `npm test` (`vitest run`) in the OBIX monorepo, which provides the test tooling (Node's test runner, Vitest, TypeScript) and the harness.
 
 ## Documentation
 
@@ -378,7 +377,7 @@ The architecture of OBIX — the package families and which packages are public 
 
 - https://github.com/obinexus/obix-driver-animation-frame — `git@github.com:obinexus/obix-driver-animation-frame.git`
 - Issues: https://github.com/obinexus/obix-driver-animation-frame/issues
-- The repository is a clean export of the package from the OBIX monorepo; its lineage (the monorepo commit it was exported from, the sources it was recovered from, earlier names) is in `PROVENANCE.json`.
+- The repository is a clean export of the package from the OBIX monorepo. Its lineage — the sources it was recovered from and its earlier names — is `PROVENANCE.json`, shipped in this package; the repository's copy also records the monorepo commit it was exported from.
 
 ## License
 
